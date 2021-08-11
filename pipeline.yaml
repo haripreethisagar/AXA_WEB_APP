@@ -12,6 +12,6 @@ steps:
   #pom-file: 'myapp/pom.xml'
   commands:
     - mvn -f 'myapp/pom.xml'
-    - mvn clean install 
+    - mvn install 
     
    
