@@ -11,7 +11,7 @@ steps:
 - name: build
   #pom-file: 'myapp/pom.xml'
   commands:
-    #- cd myapp
-    - mvn install myapp/pom.xml
+    - cd myapp
+    - mvn clean install 
     
    
