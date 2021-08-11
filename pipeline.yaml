@@ -11,6 +11,6 @@ steps:
 - name: build
   pom-file: '/myapp/pom.xml'
   commands:
-    - mvn -f '/myapp/pom.xml'
+    - mvn -f 'myapp/pom.xml'
     - mvn clean install
    
