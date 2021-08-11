@@ -24,8 +24,8 @@ steps:
     #- pwd
     #- cat sample.txt
     - cd myapp
-    - /opt/apache-maven-3.6.3/bin/mvn compile
-    - /opt/apache-maven-3.6.3/bin/mvn package
+    - /opt/maven/bin/mvn compile
+    - /opt/maven/bin/mvn package
     
    
     
