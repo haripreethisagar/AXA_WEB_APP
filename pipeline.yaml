@@ -24,13 +24,10 @@ steps:
     #- pwd
     #- cat sample.txt
     - cd myapp
-    - pwd
-    - cd /
-    - pwd
-    - cd  /opt/maven
-    - ls -ltr
-    - mvn compile 
-    - mvn package
+    - /opt/apache-maven-3.6.3/bin/mvn compile
+    - /opt/apache-maven-3.6.3/bin/mvn package
+    
+   
     
     
    
