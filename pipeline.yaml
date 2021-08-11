@@ -13,7 +13,7 @@ steps:
   #goals: 'install'
   #options: /opt/maven
   commands:
-     - cd myapp
+     #- cd myapp
      #- pwd
      #- mvn compile
      #- mvn package
@@ -23,6 +23,7 @@ steps:
     #- cd /
     #- pwd
     #- cat sample.txt
+    - cd myapp
     - pwd
     - cd /
     - pwd
