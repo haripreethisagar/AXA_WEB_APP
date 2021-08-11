@@ -11,9 +11,9 @@ steps:
 - name: build
   #pom-file: 'myapp/pom.xml'
   #goals: 'install'
-  options: /opt/maven
+  #options: /opt/maven
   commands:
-     #- cd myapp
+     - cd myapp
      #- pwd
      #- mvn compile
      #- mvn package
@@ -28,6 +28,8 @@ steps:
     - pwd
     - cd  /opt/maven
     - ls -ltr
+    - maven compile 
+    - maven package
     
     
    
