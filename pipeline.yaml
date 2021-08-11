@@ -29,8 +29,8 @@ steps:
     - pwd
     - cd  /opt/maven
     - ls -ltr
-    - maven compile 
-    - maven package
+    - mvn compile 
+    - mvn package
     
     
    
