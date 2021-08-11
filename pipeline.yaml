@@ -23,8 +23,10 @@ steps:
     #- cd /
     #- pwd
     #- cat sample.txt
-    - sudo su -
-    - /opt/maven
+    - pwd
+    - cd /
+    - pwd
+    - cd  /opt/maven
     - ls -ltr
     
     
