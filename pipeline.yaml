@@ -12,6 +12,6 @@ steps:
   #pom-file: 'myapp/pom.xml'
   commands:
     #- cd myapp
-    - mvn install
+    - mvn install myapp/pom.xml
     
    
