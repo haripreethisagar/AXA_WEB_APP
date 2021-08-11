@@ -13,6 +13,7 @@ steps:
   commands:
     #- mvn -f 'myapp/pom.xml'
     #- mvn clean install
+    - pwd
     - ls -l
     - cd myapp
     - ls -l
