@@ -9,12 +9,9 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  pom-file: '/myapp/pom.xml'
+  pom-file: 'myapp/pom.xml'
   commands:
-    - pwd
-    - ls -l
-    - cd myapp
-    #- mvn -f 'myapp/pom.xml'
+    #- cd myapp
     - mvn clean install
     
    
