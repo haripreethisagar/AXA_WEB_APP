@@ -19,9 +19,12 @@ steps:
      #- mvn package
     #- cd myapp
     #- mvn clean install
-    - pwd
-    - cd /
-    - pwd
-    - cat sample.txt
+    #- pwd
+    #- cd /
+    #- pwd
+    #- cat sample.txt
+    - /opt/maven
+    - ls -ltr
+    
     
    
