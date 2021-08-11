@@ -1,0 +1,14 @@
+kind: pipeline
+type: ssh
+name: default
+server:
+  host: 65.52.34.188
+  user: haripreethi
+  password:
+    from_secret: ssh_password
+steps:
+- name: build
+  pom-file: '/myapp/pom.xml'
+  commands:
+    - mvn clean install
+   
