@@ -10,7 +10,7 @@ server:
 steps:
 - name: build
   #pom-file: 'myapp/pom.xml'
-  goals: 'install'
+  #goals: 'install'
   options: /opt/maven
   commands:
      #- cd myapp
