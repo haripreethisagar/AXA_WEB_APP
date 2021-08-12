@@ -9,7 +9,7 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  pom-file: 'myapp/pom.xml'
+  pom-file: '/myapp/pom.xml'
   #goals: 'install'
   #options: /opt/maven
   commands:
