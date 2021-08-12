@@ -23,7 +23,7 @@ steps:
     #- cd /
     #- pwd
     #- cat sample.txt
-    #- cd myapp
+    - cd myapp
     - /opt/maven/bin/mvn compile
     - /opt/maven/bin/mvn package
     - docker build -f Dockerfile -t myappdocker .
