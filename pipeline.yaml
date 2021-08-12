@@ -26,6 +26,7 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn compile
     - /opt/maven/bin/mvn package
+    - cd ..
     - docker build -t myappdocker .
       
    
