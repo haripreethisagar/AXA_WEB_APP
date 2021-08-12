@@ -9,7 +9,7 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  pom-file: '/myapp/pom.xml'
+  #pom-file: '/myapp/pom.xml'
   #goals: 'install'
   #options: /opt/maven
   commands:
@@ -26,7 +26,10 @@ steps:
     #- cd myapp
     - /opt/maven/bin/mvn compile
     - /opt/maven/bin/mvn package
-    
+- name: build
+  commands:
+    - docker build -f Dockerfile -t myappdocker .
+      
    
     
     
