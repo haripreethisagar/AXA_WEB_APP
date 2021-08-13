@@ -30,6 +30,7 @@ steps:
     - pwd
     #- cd target
     - cd ..
+    - pwd
     - docker build -t myappdocker .
       
    
