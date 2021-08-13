@@ -28,7 +28,8 @@ steps:
     #- /opt/maven/bin/mvn package
     - /opt/maven/bin/mvn clean install
     - pwd
-    - cd target
+    #- cd target
+    - cd ..
     - docker build -t myappdocker .
       
    
