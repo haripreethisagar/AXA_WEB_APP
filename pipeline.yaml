@@ -28,8 +28,8 @@ steps:
     #- /opt/maven/bin/mvn package
     - /opt/maven/bin/mvn clean install
     - pwd
-    - cd target
-    - docker build -t myappdocker .
+    #- cd target
+    - docker build -t myappdocker /usr/local/tomcat/webapps
       
    
     
