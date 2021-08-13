@@ -1,8 +1,7 @@
-FROM openjdk:8
+FROM tomcat
 LABEL maintainer="sagar.preethi55@gmail.com"
-ENV CATALINA_HOME /usr/local/
-RUN mkdir $CATALINA_HOME/preethi
-COPY ./*.war $CATALINA_HOMEpreethi
+ENV CATALINA_HOME /usr/local/tomcat
+COPY ./*.war $CATALINA_HOME/webapps/
 
 
 
