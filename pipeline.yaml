@@ -33,7 +33,7 @@ steps:
     - cd ..
     - pwd
     - ls -ltr
-    - docker build -t myappdocker myapp/target
+    - docker build -t myappdocker .
       
    
     
