@@ -24,8 +24,9 @@ steps:
     #- pwd
     #- cat sample.txt
     - cd myapp
-    - /opt/maven/bin/mvn compile
-    - /opt/maven/bin/mvn package
+    #- /opt/maven/bin/mvn compile
+    #- /opt/maven/bin/mvn package
+    - /opt/maven/bin/mvn clean install
     - pwd
     - cd ..
     - docker build -t myappdocker .
