@@ -1,7 +1,9 @@
 FROM tomcat
-LABEL maintainer="sagar.preethi55@gmail.com"
 ENV CATALINA_HOME /usr/local/tomcat
-COPY ./*.war $CATALINA_HOME/webapps/
+ENV MYAPP_HOME /home/haripreethi/.m2/repository/mydomain/myapp
+RUN rm -rf CATALINA_HOME/webapps/*
+COPY MYAPP_HOME/0.1/myapp-0.1.war $CATALINA_HOME/webapps/
+CMD ["catalina.sh","run"]
 
 
 
