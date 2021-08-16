@@ -33,7 +33,15 @@ steps:
     - cd ..
     - pwd
     - ls -ltr
-    - docker build --no-cache -t myappdocker .
+    #- docker build --no-cache -t myappdocker .
+- publish:
+  image: ./*.war
+  settings:
+    username:
+      from_secret: jfrog_username
+    password:
+      from_secret: jfrog_password
+    repo: default-maven-local
       
    
     
