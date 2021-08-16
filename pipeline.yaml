@@ -35,7 +35,8 @@ steps:
     - ls -ltr
     #- docker build --no-cache -t myappdocker .
 - name: publish
-  image: ./*.war
+  #image: ./*.war
+  image: /home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
   settings:
     username:
       from_secret: jfrog_username
