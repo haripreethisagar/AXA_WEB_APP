@@ -42,7 +42,7 @@ steps:
       from_secret: jfrog_username
     password:
       from_secret: jfrog_password
-    repo: https://haripreethi.jfrog.io/artifactory
+    repo: https://haripreethi.jfrog.io/ui/repos/tree/General/maven
       
    
     
