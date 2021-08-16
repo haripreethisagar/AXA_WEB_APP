@@ -37,16 +37,12 @@ steps:
 - name: publish
   #image: ./*.war
   image: /home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
-  Maven Artifact:
-    Group ID: sample
-    Artifact ID: sample
-    Version: 1
   settings:
     username:
       from_secret: jfrog_username
     password:
       from_secret: jfrog_password
-    repo: https://haripreethi.jfrog.io/artifactory/maven/
+    repo: https://haripreethi.jfrog.io/artifactory/maven1/
       
    
     
