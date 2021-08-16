@@ -41,7 +41,7 @@ steps:
       from_secret: jfrog_username
     password:
       from_secret: jfrog_password
-    repo: default-maven-local/target
+    repo: maven/target
       
    
     
