@@ -37,12 +37,25 @@ steps:
 - name: publish
   #image: ./*.war
   image: /home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
-  settings:
-    username:
-      from_secret: jfrog_username
-    password:
-      from_secret: jfrog_password
-    repo: https://haripreethi.jfrog.io/ui/repos/tree/General/default-maven-local
+  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  commands:
+    # Download the JFrog CLI 
+      - curl -fL https://getcli.jfrog.io | sh
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      - ./jfrog c show
+   # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
+      - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
+      # Collect the environment variables with bce command
+      - ./jfrog rt bce myapp-0.1.war
+      # Publish the build with bp command
+      - ./jfrog rt bp myapp-0.1.war
+
+  #settings:
+    #username:
+      #from_secret: jfrog_username
+    #password:
+      #from_secret: jfrog_password
+    #repo: https://haripreethi.jfrog.io/ui/repos/tree/General/default-maven-local
       
    
     
