@@ -1,6 +1,3 @@
-#Droneci!
-kind: pipeline
-type: ssh
 name: default
 server:
   host: 65.52.34.188
@@ -8,24 +5,32 @@ server:
   password:
     from_secret: ssh_password
 steps:
-build:
-image: maven
-secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
-commands:
-    # Download the JFrog CLI 
-      - curl -fL https://getcli.jfrog.io | sh
-      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-      - ./jfrog c show
-    # Set the M2_HOME EV  
-      - export M2_HOME=/usr/share/maven
-    # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
-      - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
-    # Run the maven command with the CLI  
-      - ./jfrog rt mvn "clean install" configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
-    # Collect the environment variables with bce command
-      - ./jfrog rt bce Drone_Maven_demo 1.1.0
-    # Publish the build with bp command
-      - ./jfrog rt bp Drone_Maven_demo 1.1.0
+- name: build
+  #pom-file: '/myapp/pom.xml'
+  #goals: 'install'
+  #options: /opt/maven
+  commands:
+     #- cd myapp
+     #- pwd
+     #- mvn compile
+     #- mvn package
+    #- cd myapp
+    #- mvn clean install
+    #- pwd
+    #- cd /
+    #- pwd
+    #- cat sample.txt
+    - cd myapp
+    #- /opt/maven/bin/mvn compile
+    #- /opt/maven/bin/mvn package
+    - /opt/maven/bin/mvn clean install
+    - pwd
+    - ls -ltr
+    #- cd target
+    - cd ..
+    - pwd
+    - ls -ltr
+    - docker build --no-cache -t myappdocker .
 
 
 
