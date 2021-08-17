@@ -46,7 +46,7 @@ steps:
    # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
       #- sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
       # Collect the environment variables with bce command
-      - ./jfrog rt bce myapp-0.1.war
+      #- ./jfrog rt bce myapp-0.1.war
       # Publish the build with bp command
       - ./jfrog rt bp myapp-0.1.war
 
