@@ -9,31 +9,12 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  #pom-file: '/myapp/pom.xml'
-  #goals: 'install'
-  #options: /opt/maven
   commands:
-     #- cd myapp
-     #- pwd
-     #- mvn compile
-     #- mvn package
-    #- cd myapp
-    #- mvn clean install
-    #- pwd
-    #- cd /
-    #- pwd
-    #- cat sample.txt
     - cd myapp
     #- /opt/maven/bin/mvn compile
     #- /opt/maven/bin/mvn package
     - /opt/maven/bin/mvn clean install
-    - pwd
-    - ls -ltr
-    #- cd target
-    - cd ..
-    - pwd
-    - ls -ltr
-    - docker build --no-cache -t myappdocker .
+    #- docker build --no-cache -t myappdocker .
 
 
 
