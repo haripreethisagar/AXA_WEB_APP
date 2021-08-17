@@ -33,7 +33,7 @@ steps:
     - cd ..
     - pwd
     - ls -ltr
-    #- docker build --no-cache -t myappdocker .
+    - docker build --no-cache -t myappdocker .
 
 
 
