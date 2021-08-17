@@ -1,3 +1,6 @@
+#Droneci!
+kind: pipeline
+type: ssh
 name: default
 server:
   host: 65.52.34.188
@@ -30,7 +33,7 @@ steps:
     - cd ..
     - pwd
     - ls -ltr
-    - docker build --no-cache -t myappdocker .
+    #- docker build --no-cache -t myappdocker .
 
 
 
