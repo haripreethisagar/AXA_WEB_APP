@@ -12,6 +12,7 @@ steps:
   commands:
     - cd myapp
     - /opt/maven/bin/mvn clean install
+    - cd ..
     - docker build -t myappdocker .
     
   #image: maven
