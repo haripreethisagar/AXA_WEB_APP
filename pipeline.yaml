@@ -10,29 +10,27 @@ server:
 steps:
 - name: build
   #commands:
-   # - cd myapp
-    #- /opt/maven/bin/mvn compile
-    #- /opt/maven/bin/mvn package
-   # - /opt/maven/bin/mvn clean install
-    #- docker build --no-cache -t myappdocker .
+    - cd myapp
+    - /opt/maven/bin/mvn clean install
+    - docker build -t myappdocker .
     
-  image: maven
-  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
-  commands:
+  #image: maven
+  #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  #commands:
     # Download the JFrog CLI 
-      - curl -fL https://getcli.jfrog.io | sh
-      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-      - ./jfrog c show
+      #- curl -fL https://getcli.jfrog.io | sh
+      #- ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+     # - ./jfrog c show
     # Set the M2_HOME EV  
      # - export M2_HOME=/usr/share/maven
     # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
-      - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
+     # - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
     # Run the maven command with the CLI  
-      - ./jfrog rt "/opt/maven/bin/mvn clean install" configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
+     # - ./jfrog rt "/opt/maven/bin/mvn clean install" configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
     # Collect the environment variables with bce command
-      - ./jfrog rt bce Drone_Maven_demo 1.1.0
+     # - ./jfrog rt bce Drone_Maven_demo 1.1.0
     # Publish the build with bp command
-      - ./jfrog rt bp Drone_Maven_demo 1.1.0
+    #  - ./jfrog rt bp Drone_Maven_demo 1.1.0
 
 
 
