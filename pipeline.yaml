@@ -13,6 +13,8 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn clean install
     - cd ..
+    - whoami
+    - pwd
     - docker build -t myappdocker .
     
   #image: maven
