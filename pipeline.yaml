@@ -3,7 +3,7 @@ kind: pipeline
 type: ssh
 name: default
 server:
-  host: 65.52.34.188
+  host: 13.126.193.83
   user: haripreethi
   password:
     from_secret: ssh_password
