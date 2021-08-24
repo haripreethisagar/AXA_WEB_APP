@@ -23,7 +23,7 @@ steps:
   pom: pom.xml
   repo_key: maven
   files:
-      - target/*.war
+      -/home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
   force_upload: true
   #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   #commands:
