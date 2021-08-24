@@ -17,7 +17,7 @@ steps:
     #- docker build -t myappdocker .
 - name: artifactory
   image: athieriot/drone-artifactory
-  url: https://haripreethi.jfrog.io/artifactory/maven/
+  url: https://haripreethi.jfrog.io/ui/repos/tree/General/maven%2Fsample
   username: preethi.sagar55@gmail.com
   password: Butki@123
   pom: pom.xml
