@@ -7,16 +7,15 @@ server:
   user: haripreethi
   password:
     from_secret: ssh_password
-#steps:
-- name: build
+name: build
   #commands:
     #- cd myapp
     #- /opt/maven/bin/mvn clean install
     #- whoami
     #- pwd
     #- docker build -t myappdocker .
-  image: maven
-  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+image: maven
+secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
     commands:
     # Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
