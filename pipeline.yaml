@@ -9,42 +9,42 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  commands:
-    - cd myapp
-    - /opt/maven/bin/mvn clean install
+  #commands:
+    #- cd myapp
+    #- /opt/maven/bin/mvn clean install
     #- whoami
     #- pwd
     #- docker build -t myappdocker .
-- name: artifactory
-  image: plugins/artifactory
-  url: https://haripreethi.jfrog.io/artifactory/maven/
-  username: preethi.sagar55@gmail.com
-  password: Butki@123
-  pom: pom.xml
-  repo_key: maven
-  files:
-      - target/*.war
-  #image: maven
-  #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
-  #commands:
+#- name: artifactory
+  #image: plugins/artifactory
+  #url: https://haripreethi.jfrog.io/artifactory/maven/
+ # username: preethi.sagar55@gmail.com
+ # password: Butki@123
+ # pom: pom.xml
+ # repo_key: maven
+ # files:
+    #  - target/*.war
+  image: maven
+  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  commands:
     # Download the JFrog CLI 
-     # - curl -fL https://getcli.jfrog.io | sh
-     # - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-     # - ./jfrog c show
+      - curl -fL https://getcli.jfrog.io | sh
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      - ./jfrog c show
     # Set the M2_HOME EV  
-     # - export M2_HOME=/opt/maven/
+      - export M2_HOME=/opt/maven/
     # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
-     # - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
+      - sed -i 's,REPOSITORY_KEY,'"$REPOSITORY_KEY"',g' configuration.yml
     #You are using a deprecated syntax of the "mvn" command.
     #To use the new syntax, the command expects the details of the Artifactory server and repositories to be pre-configured.
     #To create this configuration, run the following command
-      #- jfrog rt mvnc
+      - jfrog rt mvnc
     # Run the maven command with the CLI  
-     # - ./jfrog rt mvn "clean install" configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
+      - ./jfrog rt mvn "clean install" configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
     # Collect the environment variables with bce command
-     # - ./jfrog rt bce Drone_Maven_demo 1.1.0
+      - ./jfrog rt bce Drone_Maven_demo 1.1.0
     # Publish the build with bp command
-     # - ./jfrog rt bp Drone_Maven_demo 1.1.0
+      - ./jfrog rt bp Drone_Maven_demo 1.1.0
 
 
 
