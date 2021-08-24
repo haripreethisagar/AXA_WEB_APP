@@ -25,6 +25,7 @@ server:
  # files:
       #-/home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
   #force_upload: true
+  image: maven
   secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   commands:
     # Download the JFrog CLI 
