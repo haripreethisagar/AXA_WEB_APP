@@ -17,11 +17,11 @@ steps:
     #- docker build -t myappdocker .
 - name: artifactory
   image: plugins/artifactory
-  url: https://haripreethi.jfrog.io/ui/repos/tree/General/default-maven-local
+  url: https://haripreethi.jfrog.io/artifactory/maven/
   username: preethi.sagar55@gmail.com
   password: Butki@123
   pom: pom.xml
-  repo_key: default-maven-local
+  repo_key: maven
   files:
       - target/*.war
   #image: maven
