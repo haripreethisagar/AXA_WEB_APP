@@ -24,6 +24,7 @@ steps:
   repo_key: maven
   files:
       - target/*.war
+  force_upload: true
   #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   #commands:
     # Download the JFrog CLI 
