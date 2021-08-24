@@ -33,7 +33,7 @@ steps:
       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
       - chmod +x ./jfrog
       - ./jfrog c show
-      #- ./jfrog rt ping --url http://haripreethi.jfrog.io/
+      - ./jfrog rt ping --url http://haripreethi.jfrog.io/
   
 
 
