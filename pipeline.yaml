@@ -32,6 +32,7 @@ steps:
       - curl -fL https://getcli.jfrog.io | sh
       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
       - ./jfrog c show
+      - ./jfrog rt ping
     # Set the M2_HOME EV  
      # - export M2_HOME=/opt/maven/
     # Change the repository name in the configuration.yml to the the REPOSITORY_KEY.   
