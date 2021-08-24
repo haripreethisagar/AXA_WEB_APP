@@ -39,11 +39,10 @@ steps:
     #You are using a deprecated syntax of the "mvn" command.
     #To use the new syntax, the command expects the details of the Artifactory server and repositories to be pre-configured.
     #To create this configuration, run the following command
-      - cd myapp
-      - jfrog rt mvnc
+      #- jfrog rt mvnc
     # Run the maven command with the CLI  
-      - ./jfrog rt mvn compile configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
-      - ./jfrog rt mvn package configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
+      - ./jfrog rt mvn clean install --build-name=Drone_Maven_demo --build-number=1.1.0
+      #- ./jfrog rt mvn package configuration.yml --build-name=Drone_Maven_demo --build-number=1.1.0
     # Collect the environment variables with bce command
       - ./jfrog rt bce Drone_Maven_demo 1.1.0
     # Publish the build with bp command
