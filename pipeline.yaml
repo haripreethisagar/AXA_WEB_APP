@@ -16,7 +16,7 @@ steps:
     #- pwd
     #- docker build -t myappdocker .
   image: maven
-    secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
     commands:
     # Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
