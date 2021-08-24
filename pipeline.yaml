@@ -1,4 +1,4 @@
-#Droneci!
+#Droneci!!
 kind: pipeline
 type: ssh
 name: default
@@ -9,23 +9,31 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  commands:
-    - cd myapp
-    - /opt/maven/bin/mvn clean install
-    - whoami
-    - pwd
+#  commands:
+#    - cd myapp
+#    - /opt/maven/bin/mvn clean install
+#    - whoami
+#    - pwd
     #- docker build -t myappdocker .
-- name: artifactory
-  image: plugins/drone-artifactory
-  url: https://suvi828000.jfrog.io/
-  username: suvarnapawar178@gmail.com
-  password: Ksnue@bsb2aw
-  pom: pom.xml
-  #repo_key: maven
-  files:
-      -/home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
-  force_upload: true
+#- name: artifactory
+#  image: plugins/drone-artifactory
+#  url: 
+#  username: 
+ # password: 
+ # pom: pom.xml
+ # repo_key: maven
+ # files:
+      #-/home/haripreethi/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war
+  #force_upload: true
   #image: maven
+  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  commands:
+    # Download the JFrog CLI 
+      - curl -fL https://getcli.jfrog.io | sh
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      - chmod +x ./jfrog
+      - ./jfrog c show
+      #- ./jfrog rt ping --url http://haripreethi.jfrog.io/
   
 
 
