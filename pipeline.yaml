@@ -16,12 +16,12 @@ steps:
     #- pwd
     #- docker build -t myappdocker .
 - name: artifactory
-    image: plugins/artifactory
-    url: https://haripreethi.jfrog.io/ui/
-    username: preethi.sagar55@gmail.com
-    password: Butki@123
-    pom: pom.xml
-    files:
+  image: plugins/artifactory
+  url: https://haripreethi.jfrog.io/ui/
+  username: preethi.sagar55@gmail.com
+  password: Butki@123
+  pom: pom.xml
+  files:
       - target/*.war
   #image: maven
   #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
