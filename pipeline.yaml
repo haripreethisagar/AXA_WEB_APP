@@ -7,7 +7,7 @@ server:
   user: haripreethi
   password:
     from_secret: ssh_password
-steps:
+#steps:
 - name: build
   #commands:
     #- cd myapp
