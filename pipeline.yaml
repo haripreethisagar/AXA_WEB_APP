@@ -13,6 +13,7 @@ steps:
     - cd myapp
     - mvn clean install
     - whoami
+    - cd ..
     - pwd
     - docker build -t myappdocker .
 #- name: artifactory
