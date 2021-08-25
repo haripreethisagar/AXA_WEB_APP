@@ -13,8 +13,8 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn clean install
     #- docker build -t myappdocker .
- - name: publish to jfrog
-   commands:
+- name: publish
+  commands:
       #Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
       - chmod +x ./jfrog
