@@ -3,15 +3,15 @@ kind: pipeline
 type: ssh
 name: default
 server:
-  host: 13.126.193.83
-  user: centos
+  host: 3.109.124.142
+  user: ubuntu
   password:
     from_secret: ssh_password
 steps:
 - name: build
   commands:
     - cd myapp
-    - /opt/maven/bin/mvn clean install
+    - mvn clean install
     - whoami
     - cd ..
     - pwd
