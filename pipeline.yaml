@@ -8,12 +8,12 @@ server:
   password:
     from_secret: ssh_password
 steps:
-- name: build
-  commands:
-    - cd myapp
-    - /opt/maven/bin/mvn clean install
-    - whoami
-    - pwd
+#- name: build
+#  commands:
+  #  - cd myapp
+  #  - /opt/maven/bin/mvn clean install
+  #  - whoami
+  #  - pwd
     #- docker build -t myappdocker .
 - name: artifactory
   image: plugins/drone-artifactory
@@ -21,7 +21,7 @@ steps:
   username: admin
   password: password
   pom: pom.xml
- # repo_key: maven
+  repo_key: example-repo-local
   files:
       -/home/haripreethi/myapp-0.1.war
   force_upload: true
