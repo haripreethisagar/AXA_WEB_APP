@@ -11,7 +11,7 @@ steps:
 - name: build
   commands:
     - cd myapp
-    - /opt/maven/bin/mvn clean install
+    - /opt/maven/mvn clean install
     #- whoami
     - pwd
     #- docker build -t myappdocker .
