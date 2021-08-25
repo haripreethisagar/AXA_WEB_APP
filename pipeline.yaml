@@ -29,7 +29,7 @@ steps:
  # force_upload: true
   secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   commands:
-     Download the JFrog CLI 
+     #Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
       - chmod +x ./jfrog
       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
