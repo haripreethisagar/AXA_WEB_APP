@@ -10,37 +10,17 @@ server:
 steps:
 - name: build
   #commands:
-   # - cd myapp
-    #- mvn clean install
-    #- whoami
-    #- cd ..
-    #- pwd
-    ##- docker build -t myappdocker .
-#- name: artifactory
- # artifactory:
-  #  image: athieriot/drone-artifactory 
-  #  url: https://haripreethi.jfrog.io/artifactory/maven/
-  #  username: preethi.sagar55@gmail.com
-  #  password: Butki@123
-  #  pom: pom.xml
- # repo_key: sample
-   # files:
-      #- target/myapp-0.1.war
- # force_upload: true
-  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+    - cd myapp
+    - /opt/maven/bin/mvn clean install
+    #- docker build -t myappdocker .
+
   commands:
      #Download the JFrog CLI 
-      - touch test.txt
-      - pwd
-      - ls -ltr
       - curl -fL https://getcli.jfrog.io | sh
       - chmod +x ./jfrog
       - apikey=eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJQc285cDYwTE42QVRycFRlVmVrYlZMYjg1YTB3VUxabUFsZGxrUEpMUUZnIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL3ByZWV0aGkuc2FnYXI1NUBnbWFpbC5jb20iLCJzY3AiOiJhcHBsaWVkLXBlcm1pc3Npb25zXC9hZG1pbiBhcGk6KiIsImF1ZCI6IipAKiIsImlzcyI6ImpmZmVAMDAwIiwiaWF0IjoxNjI5OTE1MDMzLCJqdGkiOiJjMDAzNTU3Yy1kNTM2LTQ0ZTgtODk2Zi1hMmE5MTBiMTY1Y2IifQ.FeJhbKqdDYDppHPdH-82NglkUpAsE1Lj1BZxqDZKfN1jnmp8ABxGfYBGfxMknFu2KAkoa4Vof2vf0B4SnCZnoeYqm4j1H_clLcD7PbX3NlUpy5AkYcF9GRMKFubckacG1wHVOD15Jvptx1zmPp82raawRJxJHtZxxX4ZjgSkgoIF5Fm_hM6m5iXNiBbhBJLieFJoiy2pXaKPUhaLRBB2z3Uosmd5_Ic2sg-B64eTG0i7iHbBBv8poZbPEQTEAHf7jA5KKa7nHksE3k1N3Y1FiIDcVvc9UfwJm1EQMhCwBknycFMDc_ZADq9kW-cXJVPiIP8pJTYyKkt_qJeMUD6BTg
-      - ./jfrog rt u --url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey test.txt maven/sample/test.txt
-      #- ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-      #- ./jfrog c show
-      #- ./jfrog rt ping --url http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
-  
+      - ./jfrog rt u --url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey myapp/target/myapp-0.1.war maven/sample/myapp-0.1.war
+      
   
 
 
