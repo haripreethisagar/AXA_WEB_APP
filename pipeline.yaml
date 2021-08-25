@@ -14,17 +14,17 @@ steps:
     - mvn clean install
     - whoami
     - pwd
-    #- docker build -t myappdocker .
-- name: artifactory
-  image: athieriot/drone-artifactory 
-  url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
-  username: admin
-  password: password
-  pom: pom.xml
-  repo_key: sample
-  files:
-      - target/*.war
-  force_upload: true
+    - docker build -t myappdocker .
+#- name: artifactory
+ # image: athieriot/drone-artifactory 
+ # url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+ # username: admin
+  #password: password
+  #pom: pom.xml
+ # repo_key: sample
+  #files:
+     # - target/*.war
+ # force_upload: true
   #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   #commands:
     # Download the JFrog CLI 
