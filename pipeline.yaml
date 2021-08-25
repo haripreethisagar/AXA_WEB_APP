@@ -9,31 +9,32 @@ server:
     from_secret: ssh_password
 steps:
 - name: build
-  commands:
-    - cd myapp
-    - mvn clean install
-    - whoami
-    - cd ..
-    - pwd
-    #- docker build -t myappdocker .
-- name: artifactory
-  artifactory:
-    image: athieriot/drone-artifactory 
-    url: https://haripreethi.jfrog.io/artifactory/maven/
-    username: preethi.sagar55@gmail.com
-    password: Butki@123
-    pom: pom.xml
- # repo_key: sample
-    files:
-      - target/myapp-0.1.war
- # force_upload: true
-  #secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
   #commands:
-    # Download the JFrog CLI 
-      #- curl -fL https://getcli.jfrog.io | sh
-      #- ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-      #- ./jfrog c show
-      #- ./jfrog rt ping --url http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+   # - cd myapp
+    #- mvn clean install
+    #- whoami
+    #- cd ..
+    #- pwd
+    ##- docker build -t myappdocker .
+#- name: artifactory
+ # artifactory:
+  #  image: athieriot/drone-artifactory 
+  #  url: https://haripreethi.jfrog.io/artifactory/maven/
+  #  username: preethi.sagar55@gmail.com
+  #  password: Butki@123
+  #  pom: pom.xml
+ # repo_key: sample
+   # files:
+      #- target/myapp-0.1.war
+ # force_upload: true
+  secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, REPOSITORY_KEY ]
+  commands:
+     Download the JFrog CLI 
+      - curl -fL https://getcli.jfrog.io | sh
+      - chmod +x ./jfrog
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      - ./jfrog c show
+      - ./jfrog rt ping --url http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
   
   
 
