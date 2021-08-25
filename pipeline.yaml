@@ -17,7 +17,7 @@ steps:
     #- docker build -t myappdocker .
 - name: artifactory
   image: plugins/drone-artifactory
-  url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+  url: http://sample.com/artifactory/sample/ #http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
   username: admin
   password: password
   pom: pom.xml
