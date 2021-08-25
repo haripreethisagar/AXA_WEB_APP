@@ -17,9 +17,9 @@ steps:
     #- docker build -t myappdocker .
 - name: artifactory
   image: plugins/drone-artifactory
-  url: https://suvi828000.jfrog.io/artifactory/default-maven-local/
-  username: suvarnapawar178@gmail.com
-  password: Ksnue@bsb2aw
+  url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+  username: admin
+  password: passw0rd
   pom: pom.xml
  # repo_key: maven
   files:
