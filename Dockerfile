@@ -1,5 +1,5 @@
 FROM tomcat 
-WORKDIR /myapp
+#WORKDIR /myapp
 ENV CATALINA_HOME /usr/local/tomcat
 #ENV CATALINA_HOME /root
 ENV MYAPP_HOME /home/ubuntu/.m2/repository/mydomain/myapp/
