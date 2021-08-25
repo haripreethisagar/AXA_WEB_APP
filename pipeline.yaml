@@ -32,9 +32,9 @@ steps:
      #Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
       - chmod +x ./jfrog
-      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-      - ./jfrog c show
-      - ./jfrog rt ping --url http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+      #- ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      #- ./jfrog c show
+      #- ./jfrog rt ping --url http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
   
   
 
