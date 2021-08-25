@@ -17,13 +17,13 @@ steps:
     #- docker build -t myappdocker .
 - name: artifactory
   image: athieriot/drone-artifactory 
-  url: http://sample.com/artifactory/sample/ #http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
+  url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
   username: admin
   password: password
   pom: pom.xml
   repo_key: sample
   files:
-      -/home/haripreethi/myapp-0.1.war
+      - target/*.war
   force_upload: true
   #image: maven
   
