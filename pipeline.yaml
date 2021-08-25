@@ -15,7 +15,7 @@ steps:
     - whoami
     - cd ..
     - pwd
-    #- docker build -t myappdocker .
+    - docker build -t myappdocker .
 #- name: artifactory
  # image: athieriot/drone-artifactory 
  # url: http://ec2-3-109-124-142.ap-south-1.compute.amazonaws.com:8082/
