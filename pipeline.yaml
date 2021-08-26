@@ -14,6 +14,7 @@ steps:
     - /opt/maven/bin/mvn clean install
     - cd ..
     - sudo docker build -t sampleimage .  
+    - docker images
     
 - name: publish  
   image: sampleimage:latest
