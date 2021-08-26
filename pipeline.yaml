@@ -12,7 +12,8 @@ steps:
   commands:
     - cd myapp
     - /opt/maven/bin/mvn clean install
-    - docker build -t myappdocker .
+    #- docker build -t myappdocker .
+    - docker build . --no-cache -t test:test
       
   
 
