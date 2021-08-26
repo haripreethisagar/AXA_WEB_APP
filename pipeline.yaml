@@ -10,8 +10,9 @@ server:
 steps:
 - name: build
   commands:
-    #- cd myapp
-    #- /opt/maven/bin/mvn clean install
+    - cd myapp
+    - /opt/maven/bin/mvn clean install
+    - cd ..
     #- docker build -t myappdocker .
     - sudo docker build -t sampleimage . 
       
