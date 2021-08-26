@@ -17,8 +17,8 @@ steps:
     - docker images
     #- docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
     - docker image tag sampleimage:latest hub.docker.com/repository/docker/haripreethisagar/new:latest
-    - docker image push haripreethi.jfrog.io/default-docker-local/mydocker:latest
-    - docker login --username preethi.sagar55@gmail.com --password Butki@123 https://haripreethi.jfrog.io/
+    - docker image push hub.docker.com/repository/docker/haripreethisagar/new:latest
+    - docker login --username haripreethisagar --password Butki@123 https://hub.docker.com
     
 #- name: publish  
   #image: hub.docker.com/repository/docker/haripreethisagar/new:latest
