@@ -4,7 +4,7 @@ type: ssh
 name: default
 server:
   host: 13.126.193.83
-  user: centos
+  user: ubuntu
   password:
     from_secret: ssh_password
 steps:
