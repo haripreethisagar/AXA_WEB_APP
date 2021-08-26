@@ -1,4 +1,4 @@
-#DroneCI!!
+#DroneCI!
 kind: pipeline
 type: ssh
 name: default
