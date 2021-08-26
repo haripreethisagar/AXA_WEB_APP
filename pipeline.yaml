@@ -13,9 +13,9 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn clean install
     - cd ..
-    - sudo docker build -t sampleimage .  
+    - docker build -t sampleimage .  
     - docker images
-    - docker push haripreethi.jfrog.io/default-docker-local/mydocker:new
+    - docker push haripreethi.jfrog.io/default-docker-local/mydocker:latest
     
 #- name: publish  
 #  image: sampleimage
