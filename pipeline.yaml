@@ -14,17 +14,18 @@ steps:
     - /opt/maven/bin/mvn clean install
     - cd ..
     - docker build -t sampleimage .  
-    #- docker images
-    #- docker push haripreethi.jfrog.io/default-docker-local/mydocker:latest
+    - docker images
+    - docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
+    - docker image push haripreethi.jfrog.io/default-docker-local/mydocker:latest
     
-- name: publish  
-  image: sampleimage
-  settings:
-    username:
-      from_secret: jfrog_username
-    password:
-      from_secret: jfrog_password
-    repo: default-docker-local
+#- name: publish  
+  #image: sampleimage
+  #settings:
+   # username:
+     # from_secret: jfrog_username
+    #password:
+     # from_secret: jfrog_password
+   # repo: default-docker-local
     #auto_tag: true
     #auto_tag_suffix: drone-build
       
