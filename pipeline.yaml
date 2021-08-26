@@ -13,8 +13,7 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn clean install
     - cd ..
-    - sudo docker build -t sampleimage . 
-    - sudo docker push 
+    - sudo docker build -t sampleimage .  
     
 - name: publish  
   image: sampleimage:latest
