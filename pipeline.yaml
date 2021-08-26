@@ -17,7 +17,7 @@ steps:
     - docker images
     
 - name: publish  
-  image: sampleimage:latest
+  image: sampleimage
   settings:
     username:
       from_secret: docker_username
