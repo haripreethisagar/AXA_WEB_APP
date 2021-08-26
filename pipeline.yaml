@@ -15,20 +15,21 @@ steps:
     - cd ..
     - docker build -t sampleimage .  
     - docker images
-    - docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
+    #- docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
+    - docker image tag sampleimage:latest hub.docker.com/repository/docker/haripreethisagar/new:latest
     - docker image push haripreethi.jfrog.io/default-docker-local/mydocker:latest
     - docker login --username preethi.sagar55@gmail.com --password Butki@123 https://haripreethi.jfrog.io/
     
-#- name: publish  
-  #image: sampleimage
-  #settings:
-   # username:
-     # from_secret: jfrog_username
-    #password:
-     # from_secret: jfrog_password
-   # repo: default-docker-local
-    #auto_tag: true
-    #auto_tag_suffix: drone-build
+- name: publish  
+  image: hub.docker.com/repository/docker/haripreethisagar/new:latest
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo:  haripreethisagar/new
+    auto_tag: true
+    auto_tag_suffix: new-build
       
   
 
