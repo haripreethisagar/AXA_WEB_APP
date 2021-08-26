@@ -13,8 +13,19 @@ steps:
     - cd myapp
     - /opt/maven/bin/mvn clean install
     - cd ..
-    #- docker build -t myappdocker .
     - sudo docker build -t sampleimage . 
+    - sudo docker push 
+    
+- name: publish  
+  image: sampleimage:latest
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: haripreethisagar/drone4
+    auto_tag: true
+    auto_tag_suffix: drone-build
       
   
 
