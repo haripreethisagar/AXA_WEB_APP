@@ -10,10 +10,10 @@ server:
 steps:
 - name: build
   commands:
-    - cd myapp
+    #- cd myapp
     #- /opt/maven/bin/mvn clean install
     #- docker build -t myappdocker .
-    - docker build . --no-cache -t test:test
+    - sudo docker build -t sampleimage . 
       
   
 
