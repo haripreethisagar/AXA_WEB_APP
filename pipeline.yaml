@@ -20,7 +20,8 @@ steps:
     - sudo docker build -t sampleimage .  
     - sudo docker images
     #- docker login -u haripreethisagar -p Butki@123 https://hub.docker.com/     cat ~/my_password.txt | docker login --username foo --password-stdin
-    - cat ~/home/centos/sample.txt | docker login --username haripreethisagar --password-stdin
+    - pwd
+    - cat ~/sample.txt | docker login --username haripreethisagar --password-stdin
     - docker tag sampleimage:latest haripreethisagar/new:latest
     - docker push haripreethisagar/new:latest
     
