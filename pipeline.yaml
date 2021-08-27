@@ -15,7 +15,8 @@ steps:
     - cd ..
     - curl -fL https://getcli.jfrog.io | sh
     - chmod +x ./jfrog
-    - apikey=eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJQc285cDYwTE42QVRycFRlVmVrYlZMYjg1YTB3VUxabUFsZGxrUEpMUUZnIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL3ByZWV0aGkuc2FnYXI1NUBnbWFpbC5jb20iLCJzY3AiOiJhcHBsaWVkLXBlcm1pc3Npb25zXC9hZG1pbiBhcGk6KiIsImF1ZCI6IipAKiIsImlzcyI6ImpmZmVAMDAwIiwiaWF0IjoxNjMwMDU2ODcwLCJqdGkiOiI0MTE5MTM3Yi01OTRhLTQyZjQtOGRiNi0zM2FiMGE0MzY3ZGIifQ.aR5hDJcaS8hgk6-r0e4Ji04u7_GGa8aM2xLascOM11A_9iACHvYLp0v-GSAU7476jmyazgd8OynzlSmJxKIxqGBgT-Xwnfi1jXCqLqEMr2CWtVs6GiKJvfjJrURKSDnxf4OY0RY71qGloYrvN-WB-qDO92tv2TKBB0ZOXgocxQHNka3bfx1ipyK6DfgGrzfp_DL8508r3ZwFC7pTX8CBnXN1pVCW5lziKRhrUnf2txtCXENDYo6F7xap3XVk5MO7T7KRU2C5aJ2_mS8A-joEA_lYifx4nZa5VBxi9JEpcru6EqUZh-oX78qCylOyjjX0XEFxvQ3iQqQp2P6kRSj0Gg
+    - ./jfrog rt c --url=https://haripreethi.jfrog.io/artifactory --user=preethi.sagar55@gmail.com --password=Butki@123
+    #- apikey=eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJQc285cDYwTE42QVRycFRlVmVrYlZMYjg1YTB3VUxabUFsZGxrUEpMUUZnIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL3ByZWV0aGkuc2FnYXI1NUBnbWFpbC5jb20iLCJzY3AiOiJhcHBsaWVkLXBlcm1pc3Npb25zXC9hZG1pbiBhcGk6KiIsImF1ZCI6IipAKiIsImlzcyI6ImpmZmVAMDAwIiwiaWF0IjoxNjMwMDU2ODcwLCJqdGkiOiI0MTE5MTM3Yi01OTRhLTQyZjQtOGRiNi0zM2FiMGE0MzY3ZGIifQ.aR5hDJcaS8hgk6-r0e4Ji04u7_GGa8aM2xLascOM11A_9iACHvYLp0v-GSAU7476jmyazgd8OynzlSmJxKIxqGBgT-Xwnfi1jXCqLqEMr2CWtVs6GiKJvfjJrURKSDnxf4OY0RY71qGloYrvN-WB-qDO92tv2TKBB0ZOXgocxQHNka3bfx1ipyK6DfgGrzfp_DL8508r3ZwFC7pTX8CBnXN1pVCW5lziKRhrUnf2txtCXENDYo6F7xap3XVk5MO7T7KRU2C5aJ2_mS8A-joEA_lYifx4nZa5VBxi9JEpcru6EqUZh-oX78qCylOyjjX0XEFxvQ3iQqQp2P6kRSj0Gg
     #- ./jfrog rt u --url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey myapp/target/myapp-0.1.war maven/sample/myapp-0.1.war
     - sudo docker build -t sampleimage .  
     - sudo docker images
