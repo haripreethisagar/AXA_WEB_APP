@@ -21,10 +21,9 @@ steps:
     - sudo docker images
     #- docker login -u haripreethisagar -p Butki@123 https://hub.docker.com/     cat ~/my_password.txt | docker login --username foo --password-stdin
     - pwd
-    - password=Butki@123
-    - docker login --username haripreethisagar --password $password
-    - docker tag sampleimage:latest haripreethisagar/new:latest
-    - docker push haripreethisagar/new:latest
+    #- docker login --username haripreethisagar --password $password
+    - docker tag sampleimage:latest haripreethi.jfrog.io/sampledocker:latest
+    - docker push haripreethi.jfrog.io/sampledocker:latest
     
     
    
