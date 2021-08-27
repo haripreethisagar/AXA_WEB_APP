@@ -15,10 +15,16 @@ steps:
     - cd ..
     - docker build -t sampleimage .  
     - docker images
+    - curl -fL https://getcli.jfrog.io | sh
+    - chmod +x ./jfrog
+    - apikey=eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJQc285cDYwTE42QVRycFRlVmVrYlZMYjg1YTB3VUxabUFsZGxrUEpMUUZnIn0.eyJzdWIiOiJqZmZlQDAwMFwvdXNlcnNcL3ByZWV0aGkuc2FnYXI1NUBnbWFpbC5jb20iLCJzY3AiOiJhcHBsaWVkLXBlcm1pc3Npb25zXC9hZG1pbiBhcGk6KiIsImF1ZCI6IipAKiIsImlzcyI6ImpmZmVAMDAwIiwiaWF0IjoxNjI5OTE1MDMzLCJqdGkiOiJjMDAzNTU3Yy1kNTM2LTQ0ZTgtODk2Zi1hMmE5MTBiMTY1Y2IifQ.FeJhbKqdDYDppHPdH-82NglkUpAsE1Lj1BZxqDZKfN1jnmp8ABxGfYBGfxMknFu2KAkoa4Vof2vf0B4SnCZnoeYqm4j1H_clLcD7PbX3NlUpy5AkYcF9GRMKFubckacG1wHVOD15Jvptx1zmPp82raawRJxJHtZxxX4ZjgSkgoIF5Fm_hM6m5iXNiBbhBJLieFJoiy2pXaKPUhaLRBB2z3Uosmd5_Ic2sg-B64eTG0i7iHbBBv8poZbPEQTEAHf7jA5KKa7nHksE3k1N3Y1FiIDcVvc9UfwJm1EQMhCwBknycFMDc_ZADq9kW-cXJVPiIP8pJTYyKkt_qJeMUD6BTg
+    - docker push haripreethi.jfrog.io/default-docker-local/sample:latest
     #- docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
-    - docker image tag sampleimage:latest hub.docker.com/repository/docker/haripreethisagar/new:latest
-    - docker image push hub.docker.com/repository/docker/haripreethisagar/new:latest
-    - docker login --username haripreethisagar --password Butki@123 https://hub.docker.com
+    #- docker image tag sampleimage:latest hub.docker.com/repository/docker/haripreethisagar/new:latest
+    #- docker image push hub.docker.com/repository/docker/haripreethisagar/new:latest
+    #- docker login --username haripreethisagar --password Butki@123 https://hub.docker.com
+    
+   
     
 #- name: publish  
   #image: hub.docker.com/repository/docker/haripreethisagar/new:latest
