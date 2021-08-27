@@ -19,11 +19,11 @@ steps:
     #- ./jfrog rt u --url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey myapp/target/myapp-0.1.war maven/sample/myapp-0.1.war
     - sudo docker build -t sampleimage .  
     - sudo docker images
-    - sudo docker push haripreethi.jfrog.io/sampleimage:latest
-    #- docker image tag sampleimage:latest haripreethi.jfrog.io/default-docker-local/mydocker:latest
-    #- docker image tag sampleimage:latest hub.docker.com/repository/docker/haripreethisagar/new:latest
-    #- docker image push hub.docker.com/repository/docker/haripreethisagar/new:latest
-    #- docker login --username haripreethisagar --password Butki@123 https://hub.docker.com
+    - docker tag sampleimage haripreethi.jfrog.io/mydocker:new      
+    - docker push haripreethi.jfrog.io/mydocker:new
+    
+    
+   
     
    
     
