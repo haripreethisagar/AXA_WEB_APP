@@ -20,12 +20,12 @@ steps:
     #- ./jfrog rt u --url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey myapp/target/myapp-0.1.war maven/sample/myapp-0.1.war
     - sudo docker build -t sampleimage .  
     - sudo docker images
-    -  ./jfrog rt c --artifactory-url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey sampledocker/sampleimage
+    #-  ./jfrog rt c --artifactory-url=https://haripreethi.jfrog.io/artifactory --access-token=$apikey sampledocker/sampleimage
     #- docker login -u haripreethisagar -p Butki@123 https://hub.docker.com/     cat ~/my_password.txt | docker login --username foo --password-stdin
     - pwd
     #- docker login --username haripreethisagar --password $password
-    #- docker tag sampleimage:latest haripreethi.jfrog.io/sampledocker:latest
-    #- docker push haripreethi.jfrog.io/sampledocker:latest
+    - docker tag sampleimage:latest haripreethi.jfrog.io/sampledocker:latest
+    - docker push haripreethi.jfrog.io/sampledocker:latest
     
     
    
