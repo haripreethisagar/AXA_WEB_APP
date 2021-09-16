@@ -13,7 +13,7 @@ steps:
     - cd myapp
     - mvn clean install
     - pwd
-    - cd myapp/target
+    - cd /home/centos/.m2/repository/mydomain/myapp/0.1
     - jar -xvf myapp-0.1.war
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
