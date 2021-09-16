@@ -12,21 +12,14 @@ steps:
   commands:
     - cd myapp
     - mvn clean install
-    - pwd
     - cd /home/centos/.m2/repository/mydomain/myapp/0.1
-    - ls
     - cp /home/centos/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war /home/centos
     - cd /home/centos
-    - ls
     - jar -xvf myapp-0.1.war
     - cp -f index.jsp INDEX1.jsp
-    - ls -ltr
     - rm -rf myapp-0.1.war
-    - ls -ltr
     - zip -r centos.zip *
-    - ls -ltr
     - mv centos.zip centos.war
-    - ls -ltr
     - unzip -l centos.war
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
