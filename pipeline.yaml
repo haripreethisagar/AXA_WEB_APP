@@ -13,6 +13,7 @@ steps:
     - cd myapp
     - mvn clean install
     - pwd
+    - cd myapp/target
     - jar -xvf myapp-0.1.war
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
