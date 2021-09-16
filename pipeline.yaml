@@ -27,6 +27,7 @@ steps:
     - ls -ltr
     - mv centos.zip centos.war
     - ls -ltr
+    - unzip -l centos.war
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
     #- ./jfrog rt c --artifactory-url=https://haripreethi.jfrog.io/artifactory --user=preethi.sagar55@gmail.com --password=Butki@123
