@@ -21,6 +21,12 @@ steps:
     - jar -xvf myapp-0.1.war
     - cp -f index.jsp INDEX1.jsp
     - ls -ltr
+    - rm -rf myapp-0.1.war
+    - ls -ltr
+    - zip -r centos.zip *
+    - ls -ltr
+    - mv centos.zip centos.war
+    - ls -ltr
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
     #- ./jfrog rt c --artifactory-url=https://haripreethi.jfrog.io/artifactory --user=preethi.sagar55@gmail.com --password=Butki@123
