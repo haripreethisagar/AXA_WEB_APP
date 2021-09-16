@@ -12,11 +12,15 @@ steps:
   commands:
     - cd myapp
     - mvn clean install
-    - cd /home/centos/.m2/repository/mydomain/myapp/0.1
     - cp /home/centos/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war /home/centos
     - cd /home/centos
     - jar -xvf myapp-0.1.war
-    - cp -f index.jsp INDEX1.jsp
+    - ls -ltr
+    - rm -rf index.jsp
+    - cd myapp
+    - pwd
+    - cp sample.txt /home/centos
+    - ls -ltr
     - rm -rf myapp-0.1.war
     - zip -r centos.zip *
     - mv centos.zip centos.war
