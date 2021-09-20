@@ -11,6 +11,7 @@ steps:
 - name: build
   commands:
     - cd myapp
+    - ls -ltr
     - pwd
     - mvn clean install
     - cp /home/centos/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
