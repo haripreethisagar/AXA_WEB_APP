@@ -22,6 +22,8 @@ steps:
     - pwd
     - ls -ltr
     - cd ..
+    - pwd
+    - ls -ltr
     - cp sample.txt cd /myapp/target
     - ls -ltr
     - rm -rf myapp-0.1.war
