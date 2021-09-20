@@ -14,19 +14,20 @@ steps:
     - ls -ltr
     - pwd
     - mvn clean install
-    - cp /home/centos/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
-    - cd /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
+    #- cp /home/centos/.m2/repository/mydomain/myapp/0.1/myapp-0.1.war /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
+    - cd target
     - jar -xvf myapp-0.1.war
     - ls -ltr
     - rm -rf index.jsp
     - pwd
     - ls -ltr
-    - cp /src/myapp/sample.txt /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
+    - cd ..
+    - cp sample.txt cd /myapp/target
     - ls -ltr
     - rm -rf myapp-0.1.war
-    - zip -r sampleapp.zip *
-    - mv sampleapp.zip sampleapp.war
-    - unzip -l sampleapp.war
+    - zip -r target.zip *
+    - mv target.zip target.war
+    - unzip -l target.war
     #- curl -fL https://getcli.jfrog.io | sh
     #- chmod +x ./jfrog
     #- ./jfrog rt c --artifactory-url=https://haripreethi.jfrog.io/artifactory --user=preethi.sagar55@gmail.com --password=Butki@123
