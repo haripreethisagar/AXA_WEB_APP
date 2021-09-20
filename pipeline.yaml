@@ -24,7 +24,7 @@ steps:
     - cd ..
     - pwd
     - ls -ltr
-    - cp sample.txt cd /myapp/target
+    - cp sample.txt /myapp/target
     - ls -ltr
     - rm -rf myapp-0.1.war
     - zip -r target.zip *
