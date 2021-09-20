@@ -21,7 +21,7 @@ steps:
     - rm -rf index.jsp
     - pwd
     - ls -ltr
-    - cp /src/sample.txt /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
+    - cp /src/myapp/sample.txt /home/centos/.m2/repository/mydomain/myapp/0.1/sampleapp
     - ls -ltr
     - rm -rf myapp-0.1.war
     - zip -r sampleapp.zip *
