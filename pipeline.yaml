@@ -3,8 +3,8 @@ kind: pipeline
 type: ssh
 name: default
 server:
-  host: 13.126.193.83
-  user: centos
+  host: 20.124.176.48
+  user: drone
   password:
     from_secret: ssh_password
 steps:
